@@ -1,4 +1,4 @@
-package com.luv2code.springboot.thymeleafdemo.web.dto;
+package com.capstone.springboot.thymeleafdemo.web.dto;
 
 public class UserRegistrationDto {
 	

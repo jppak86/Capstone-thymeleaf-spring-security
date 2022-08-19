@@ -1,4 +1,4 @@
-package com.luv2code.springboot.thymeleafdemo.config;
+package com.capstone.springboot.thymeleafdemo.config;
 
 import java.security.Principal;
 import java.util.List;
@@ -15,9 +15,9 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
-import com.luv2code.springboot.thymeleafdemo.entity.User;
-import com.luv2code.springboot.thymeleafdemo.repository.UserRepository;
-import com.luv2code.springboot.thymeleafdemo.service.UserService;
+import com.capstone.springboot.thymeleafdemo.entity.User;
+import com.capstone.springboot.thymeleafdemo.repository.UserRepository;
+import com.capstone.springboot.thymeleafdemo.service.UserService;
 
 @Configuration
 @EnableWebSecurity

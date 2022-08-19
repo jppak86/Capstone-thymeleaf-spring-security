@@ -1,9 +1,9 @@
-package com.luv2code.springboot.thymeleafdemo.service;
+package com.capstone.springboot.thymeleafdemo.service;
 
 import org.springframework.security.core.userdetails.UserDetailsService;
 
-import com.luv2code.springboot.thymeleafdemo.entity.User;
-import com.luv2code.springboot.thymeleafdemo.web.dto.UserRegistrationDto;
+import com.capstone.springboot.thymeleafdemo.entity.User;
+import com.capstone.springboot.thymeleafdemo.web.dto.UserRegistrationDto;
 
 
 public interface UserService extends UserDetailsService {

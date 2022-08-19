@@ -1,4 +1,4 @@
-package com.luv2code.springboot.thymeleafdemo.service;
+package com.capstone.springboot.thymeleafdemo.service;
 
 import java.util.Arrays;
 import java.util.Collection;
@@ -12,10 +12,10 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.luv2code.springboot.thymeleafdemo.entity.Role;
-import com.luv2code.springboot.thymeleafdemo.entity.User;
-import com.luv2code.springboot.thymeleafdemo.repository.UserRepository;
-import com.luv2code.springboot.thymeleafdemo.web.dto.UserRegistrationDto;
+import com.capstone.springboot.thymeleafdemo.entity.Role;
+import com.capstone.springboot.thymeleafdemo.entity.User;
+import com.capstone.springboot.thymeleafdemo.repository.UserRepository;
+import com.capstone.springboot.thymeleafdemo.web.dto.UserRegistrationDto;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -39,7 +39,7 @@ public class UserServiceImpl implements UserService {
 		
 		User user = new User(registrationDto.getFirstName(), 
 				registrationDto.getLastName(), registrationDto.getEmail(),
-				passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_USER")));
+				passwordEncoder.encode(registrationDto.getPassword()), Arrays.asList(new Role("ROLE_ADMIN")));
 		
 		return userRepository.save(user);
 	}
