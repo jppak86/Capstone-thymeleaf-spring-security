@@ -1,4 +1,4 @@
-package com.luv2code.springboot.thymeleafdemo;
+package com.capstone.springboot.thymeleafdemo;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
