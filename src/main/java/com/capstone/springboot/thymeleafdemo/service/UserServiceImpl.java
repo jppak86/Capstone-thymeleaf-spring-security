@@ -2,6 +2,8 @@ package com.capstone.springboot.thymeleafdemo.service;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +28,38 @@ public class UserServiceImpl implements UserService {
 	@Autowired
 	private BCryptPasswordEncoder passwordEncoder;
 	
+	@Autowired
 	public UserServiceImpl(UserRepository userRepository) {
-		super();
 		this.userRepository = userRepository;
 	}
+	
+	
+	@Override
+	public List<User> findAllUsers(){
+		return userRepository.findAllByOrderByIdAsc();
+	}
+	
+	@Override
+	public User findUserById(long theId) {
+		Optional<User> result = userRepository.findById(theId);
+		
+		User theUser = null;
+		
+		if (result.isPresent()) {
+			theUser = result.get();
+		}
+		else {
+			throw new RuntimeException("Did not find user id: " + theId);
+		}
+		
+		return theUser;
+	}
+	
+	@Override
+	public void saveUser(User theUser) {
+		userRepository.save(theUser);
+	}
+	
 
 
 
@@ -43,6 +73,14 @@ public class UserServiceImpl implements UserService {
 		
 		return userRepository.save(user);
 	}
+	
+	
+	@Override
+	public void deleteUserById(long theId) {
+		userRepository.deleteById(theId);
+	}
+	
+	
 
 
 

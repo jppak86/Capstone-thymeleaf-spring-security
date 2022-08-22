@@ -5,13 +5,10 @@ import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.capstone.springboot.thymeleafdemo.entity.User;
+import com.capstone.springboot.thymeleafdemo.entity.TopProduct;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, Long> {
-	
-	User findByEmail(String email);
-	
-	public List<User> findAllByOrderByIdAsc();
+public interface ProductRepository extends JpaRepository<TopProduct, Integer>{
 
+	public List<TopProduct> findAllByOrderByIdAsc();
 }
